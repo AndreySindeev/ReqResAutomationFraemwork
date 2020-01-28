@@ -3,6 +3,7 @@ package RequestsPackage;
 import BaseUtils.BaseClass;
 import DataProvider.ListAccountsDataProvider;
 import io.restassured.http.ContentType;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -12,10 +13,10 @@ public class GetRequestModel extends BaseClass {
     private String GET_LISTS_USERS = BASE_URL + "users?page=1";
 
 
-    protected void verifyInformationAboutSingleUser(){
+    protected void verifyInformationAboutSingleUser() {
         given()
                 .when()
-                .get( GET_SINGLE_USER_INFO)
+                .get(GET_SINGLE_USER_INFO)
                 .then()
                 .contentType(ContentType.JSON)
                 .body("data.first_name", equalTo(ListAccountsDataProvider.JANET.getFirstName()))
@@ -25,16 +26,16 @@ public class GetRequestModel extends BaseClass {
 
     }
 
-    protected void verifyGET404Error(boolean singleORsingleResourceNotFound){
+    protected void verifyGET404Error(boolean singleORsingleResourceNotFound) {
         int randomNumber = generateRandonNumber();
-        if (singleORsingleResourceNotFound){
+        if (singleORsingleResourceNotFound) {
             GetRequest404Error(randomNumber, BASE_URL + "users/");
         } else {
             GetRequest404Error(randomNumber, BASE_URL + "unknown/");
         }
     }
 
-    private void GetRequest404Error(int randomNumber, String URLrequest){
+    private void GetRequest404Error(int randomNumber, String URLrequest) {
         given()
                 .when()
                 .get(URLrequest + randomNumber)
@@ -44,7 +45,7 @@ public class GetRequestModel extends BaseClass {
     }
 
 
-    protected void verifyFirstNameInformationAboutListsUser(){
+    protected void verifyFirstNameInformationAboutListsUser() {
         given()
                 .when()
                 .get(GET_LISTS_USERS)
@@ -59,7 +60,7 @@ public class GetRequestModel extends BaseClass {
                 .body("data[5].first_name", equalTo(ListAccountsDataProvider.TRACEY.getFirstName()));
     }
 
-    protected void verifyLastNameNameInfoAboutListsUser(){
+    protected void verifyLastNameNameInfoAboutListsUser() {
         given()
                 .when()
                 .get(GET_LISTS_USERS)
@@ -74,9 +75,7 @@ public class GetRequestModel extends BaseClass {
                 .body("data[5].last_name", equalTo(ListAccountsDataProvider.TRACEY.getLastName()));
     }
 
-
-
-    protected void verifyEmailInfoAboulListsUser(){
+    protected void verifyEmailInfoAboulListsUser() {
         given()
                 .when()
                 .get(GET_LISTS_USERS)
@@ -90,12 +89,6 @@ public class GetRequestModel extends BaseClass {
                 .body("data[4].email", equalTo(ListAccountsDataProvider.CHARLES.getEmail()))
                 .body("data[5].email", equalTo(ListAccountsDataProvider.TRACEY.getEmail()));
     }
-
-
-
-
-
-
 
 
 }

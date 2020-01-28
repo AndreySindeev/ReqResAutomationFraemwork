@@ -3,7 +3,7 @@ package Tests;
 import RequestsPackage.PostRequestModel;
 import org.junit.Test;
 
-public class TestPOSTRequests extends PostRequestModel {
+public class TestPostRequests extends PostRequestModel {
 
 
     @Test

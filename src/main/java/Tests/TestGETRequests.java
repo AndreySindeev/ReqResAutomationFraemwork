@@ -5,7 +5,7 @@ package Tests;
 import RequestsPackage.GetRequestModel;
 import org.junit.Test;
 
-public class TestGETRequests extends GetRequestModel {
+public class TestGetRequests extends GetRequestModel {
 
     @Test
     public void testGetListUsersInfo(){
