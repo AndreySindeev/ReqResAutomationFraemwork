@@ -1,8 +1,11 @@
 package Tests;
 
-        import org.junit.runner.RunWith;
-        import org.junit.runners.Suite;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
+/*
+Regression Suite
+* */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         TestPostRequests.class,
