@@ -10,7 +10,7 @@ public class BaseClass {
 
     protected String CONTENT_TYPE = "application/json";
 
-    public int generateRandonNumber(){
+    public int generateRandomNumber(){
         int min = 15;
         int max = 30;
         int randomID = (int) (Math.random()* max + min);

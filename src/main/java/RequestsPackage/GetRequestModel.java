@@ -27,7 +27,7 @@ public class GetRequestModel extends BaseClass {
     }
 
     protected void verifyGET404Error(boolean singleORsingleResourceNotFound) {
-        int randomNumber = generateRandonNumber();
+        int randomNumber = generateRandomNumber();
         if (singleORsingleResourceNotFound) {
             GetRequest404Error(randomNumber, BASE_URL + "users/");
         } else {
